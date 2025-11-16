@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "slug": "two-sum",
+  "difficulty": "easy",
+  "topics": [
+    "array",
+    "hash-table"
+  ],
+  "date_solved": "2025-11-16",
+  "url": "https://leetcode.com/problems/two-sum/description/",
+  "attempts": 1,
+  "cpp": false,
+  "rust": false,
+  "reviews": {
+    "1d": "2025-11-17",
+    "7d": "2025-11-23",
+    "30d": "2025-12-16"
+  }
+}
