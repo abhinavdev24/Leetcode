@@ -1,2 +1,6 @@
 # Ignore all Python bytecode caches
 __pycache__/
+main
+*.dSYM
+.vscode/
+.DS_Store

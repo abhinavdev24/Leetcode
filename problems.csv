@@ -1,2 +1,7 @@
 id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7d,reviews_30d
-1,two-sum,easy,array;hash-table,2025-11-16,https://leetcode.com/problems/two-sum/description/,1,false,false,2025-11-17,2025-11-23,2025-12-16
+1,two-sum,easy,array;hash-table,2025-11-16,https://leetcode.com/problems/two-sum/description/,1,true,true,2025-11-17,2025-11-23,2025-12-16
+11,container-with-most-water,medium,array;two-pointers;greedy,2025-11-20,https://leetcode.com/problems/container-with-most-water/description,1,true,true,2025-11-21,2025-11-27,2025-12-20
+57,insert-interval,medium,array,2026-02-02,https://leetcode.com/problems/insert-interval,1,true,true,2026-02-03,2026-02-09,2026-03-04
+56,merge-intervals,medium,array;sorting,2026-02-02,https://leetcode.com/problems/merge-intervals,1,true,true,2026-02-03,2026-02-09,2026-03-04
+228,summary-ranges,easy,array,2026-02-02,https://leetcode.com/problems/summary-ranges,1,true,true,2026-02-03,2026-02-09,2026-03-04
+219,contains-duplicate-ii,easy,array;hash-table;sliding-window,2026-02-02,https://leetcode.com/problems/contains-duplicate-ii,1,true,true,2026-02-03,2026-02-09,2026-03-04

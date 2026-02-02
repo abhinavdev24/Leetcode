@@ -17,6 +17,7 @@ import json
 import pathlib
 import re
 import sys
+from requests.exceptions import RequestException
 from typing import Any, Dict
 
 import requests
@@ -24,6 +25,7 @@ import requests
 
 GRAPHQL_ENDPOINT = "https://leetcode.com/graphql"
 BASE_URL = "https://leetcode.com"
+REQUEST_TIMEOUT_SECONDS = 20
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
@@ -59,14 +61,21 @@ def parse_slug(url: str) -> str:
 
 def fetch_problem_data(slug: str) -> Dict[str, Any]:
     session = requests.Session()
-    session.headers.update({"User-Agent": USER_AGENT, "Referer": BASE_URL})
-
-    resp = session.get(BASE_URL)
-    resp.raise_for_status()
+    session.headers.update(
+        {
+            "User-Agent": USER_AGENT,
+            "Referer": f"{BASE_URL}/problems/{slug}/",
+            "Origin": BASE_URL,
+            "Content-Type": "application/json",
+        }
+    )
 
     payload = {"query": GRAPHQL_QUERY, "variables": {"titleSlug": slug}}
-    resp = session.post(GRAPHQL_ENDPOINT, json=payload)
-    resp.raise_for_status()
+    try:
+        resp = session.post(GRAPHQL_ENDPOINT, json=payload, timeout=REQUEST_TIMEOUT_SECONDS)
+        resp.raise_for_status()
+    except RequestException as exc:
+        raise RuntimeError(f"Network/API request failed: {exc}") from exc
 
     data = resp.json()
     if "errors" in data and data["errors"]:

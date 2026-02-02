@@ -35,3 +35,8 @@ The table below is generated from `problems.csv`; each entry links to the auto-g
 | id | slug | difficulty | topics | url |
 | --- | --- | --- | --- | --- |
 | 1 | [two-sum](problems/1_two-sum/Readme.md) | easy | array, hash-table | https://leetcode.com/problems/two-sum/description/ |
+| 11 | [container-with-most-water](problems/11_container-with-most-water/Readme.md) | medium | array, two-pointers, greedy | https://leetcode.com/problems/container-with-most-water/description |
+| 56 | [merge-intervals](problems/56_merge-intervals/Readme.md) | medium | array, sorting | https://leetcode.com/problems/merge-intervals |
+| 57 | [insert-interval](problems/57_insert-interval/Readme.md) | medium | array | https://leetcode.com/problems/insert-interval |
+| 219 | [contains-duplicate-ii](problems/219_contains-duplicate-ii/Readme.md) | easy | array, hash-table, sliding-window | https://leetcode.com/problems/contains-duplicate-ii |
+| 228 | [summary-ranges](problems/228_summary-ranges/Readme.md) | easy | array | https://leetcode.com/problems/summary-ranges |
