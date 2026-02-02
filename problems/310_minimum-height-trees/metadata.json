@@ -1,0 +1,21 @@
+{
+  "id": 310,
+  "slug": "minimum-height-trees",
+  "difficulty": "medium",
+  "topics": [
+    "depth-first-search",
+    "breadth-first-search",
+    "graph",
+    "topological-sort"
+  ],
+  "date_solved": "2026-02-02",
+  "url": "https://leetcode.com/problems/minimum-height-trees/",
+  "attempts": 1,
+  "cpp": false,
+  "rust": false,
+  "reviews": {
+    "1d": "2026-02-03",
+    "7d": "2026-02-09",
+    "30d": "2026-03-04"
+  }
+}

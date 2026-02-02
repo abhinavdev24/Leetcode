@@ -38,5 +38,8 @@ The table below is generated from `problems.csv`; each entry links to the auto-g
 | 11 | [container-with-most-water](problems/11_container-with-most-water/Readme.md) | medium | array, two-pointers, greedy | https://leetcode.com/problems/container-with-most-water/description |
 | 56 | [merge-intervals](problems/56_merge-intervals/Readme.md) | medium | array, sorting | https://leetcode.com/problems/merge-intervals |
 | 57 | [insert-interval](problems/57_insert-interval/Readme.md) | medium | array | https://leetcode.com/problems/insert-interval |
+| 147 | [insertion-sort-list](problems/147_insertion-sort-list/Readme.md) | medium | linked-list, sorting | https://leetcode.com/problems/insertion-sort-list/ |
+| 148 | [sort-list](problems/148_sort-list/Readme.md) | medium | linked-list, two-pointers, divide-and-conquer, sorting, merge-sort | https://leetcode.com/problems/sort-list/ |
 | 219 | [contains-duplicate-ii](problems/219_contains-duplicate-ii/Readme.md) | easy | array, hash-table, sliding-window | https://leetcode.com/problems/contains-duplicate-ii |
 | 228 | [summary-ranges](problems/228_summary-ranges/Readme.md) | easy | array | https://leetcode.com/problems/summary-ranges |
+| 310 | [minimum-height-trees](problems/310_minimum-height-trees/Readme.md) | medium | depth-first-search, breadth-first-search, graph, topological-sort | https://leetcode.com/problems/minimum-height-trees/ |
