@@ -5,6 +5,12 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 56,merge-intervals,medium,array;sorting,2026-02-02,https://leetcode.com/problems/merge-intervals,1,true,true,2026-02-03,2026-02-09,2026-03-04
 228,summary-ranges,easy,array,2026-02-02,https://leetcode.com/problems/summary-ranges,1,true,true,2026-02-03,2026-02-09,2026-03-04
 219,contains-duplicate-ii,easy,array;hash-table;sliding-window,2026-02-02,https://leetcode.com/problems/contains-duplicate-ii,1,true,true,2026-02-03,2026-02-09,2026-03-04
-148,sort-list,medium,linked-list;two-pointers;divide-and-conquer;sorting;merge-sort,2026-02-02,https://leetcode.com/problems/sort-list/,1,false,false,2026-02-03,2026-02-09,2026-03-04
-147,insertion-sort-list,medium,linked-list;sorting,2026-02-02,https://leetcode.com/problems/insertion-sort-list/,1,false,false,2026-02-03,2026-02-09,2026-03-04
-310,minimum-height-trees,medium,depth-first-search;breadth-first-search;graph;topological-sort,2026-02-02,https://leetcode.com/problems/minimum-height-trees/,1,false,false,2026-02-03,2026-02-09,2026-03-04
+148,sort-list,medium,linked-list;two-pointers;divide-and-conquer;sorting;merge-sort,2026-02-02,https://leetcode.com/problems/sort-list/,1,true,true,2026-02-03,2026-02-09,2026-03-04
+147,insertion-sort-list,medium,linked-list;sorting,2026-02-02,https://leetcode.com/problems/insertion-sort-list/,1,true,true,2026-02-03,2026-02-09,2026-03-04
+310,minimum-height-trees,medium,depth-first-search;breadth-first-search;graph;topological-sort,2026-02-02,https://leetcode.com/problems/minimum-height-trees/,1,true,true,2026-02-03,2026-02-09,2026-03-04
+49,group-anagrams,medium,array;hash-table;string;sorting,2026-02-03,https://leetcode.com/problems/group-anagrams/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+73,set-matrix-zeroes,medium,array;hash-table;matrix,2026-02-03,https://leetcode.com/problems/set-matrix-zeroes/description/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+12,integer-to-roman,medium,hash-table;math;string,2026-02-03,https://leetcode.com/problems/integer-to-roman/description/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+151,reverse-words-in-a-string,medium,two-pointers;string,2026-02-03,https://leetcode.com/problems/reverse-words-in-a-string/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+13,roman-to-integer,easy,hash-table;math;string,2026-02-03,https://leetcode.com/problems/roman-to-integer/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+802,find-eventual-safe-states,medium,depth-first-search;breadth-first-search;graph;topological-sort,2026-02-03,https://leetcode.com/problems/find-eventual-safe-states/,1,false,false,2026-02-04,2026-02-10,2026-03-05
