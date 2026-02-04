@@ -1,0 +1,21 @@
+{
+  "id": 851,
+  "slug": "loud-and-rich",
+  "difficulty": "medium",
+  "topics": [
+    "array",
+    "depth-first-search",
+    "graph",
+    "topological-sort"
+  ],
+  "date_solved": "2026-02-03",
+  "url": "https://leetcode.com/problems/loud-and-rich/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-04",
+    "7d": "2026-02-10",
+    "30d": "2026-03-05"
+  }
+}
