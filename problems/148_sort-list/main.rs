@@ -15,47 +15,61 @@ struct Solution;
 
 impl Solution {
     pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        if head.is_none() || head.as_ref().unwrap().next.is_none() {
+        fn get_len(head: &Option<Box<ListNode>>) -> usize {
+            let mut len = 0;
+            let mut current = head.as_ref();
+            while let Some(node) = current {
+                len += 1;
+                current = node.next.as_ref();
+            }
+            len
+        }
+
+        fn merge(a: Option<Box<ListNode>>, b: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+            let mut dummy = Some(Box::new(ListNode::new(0)));
+            let mut tail = &mut dummy;
+            let mut a = a;
+            let mut b = b;
+            while a.is_some() && b.is_some() {
+                let a_val = a.as_ref().unwrap().val;
+                let b_val = b.as_ref().unwrap().val;
+                if a_val < b_val {
+                    let next = a.as_mut().unwrap().next.take();
+                    tail.as_mut().unwrap().next = a;
+                    a = next;
+                } else {
+                    let next = b.as_mut().unwrap().next.take();
+                    tail.as_mut().unwrap().next = b;
+                    b = next;
+                }
+                tail = &mut tail.as_mut().unwrap().next;
+            }
+            if a.is_some() {
+                tail.as_mut().unwrap().next = a;
+            }
+            if b.is_some() {
+                tail.as_mut().unwrap().next = b;
+            }
+            dummy.unwrap().next
+        }
+
+        let len = get_len(&head);
+        if len <= 1 {
             return head;
         }
-        // find middle
-        let mut slow = &mut head;
-        let mut fast = &head;
-        while fast.is_some() && fast.as_ref().unwrap().next.is_some() {
-            slow = &mut slow.as_mut().unwrap().next;
-            fast = &fast.as_ref().unwrap().next.as_ref().unwrap().next;
-        }
-        // now slow is the node before middle
-        let mut right = slow.as_mut().unwrap().next.take();
-        let left = Self::sort_list(head);
-        let right = Self::sort_list(right);
-        Self::merge(left, right)
-    }
 
-    fn merge(a: Option<Box<ListNode>>, b: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        let mut dummy = Box::new(ListNode::new(0));
-        let mut curr = &mut dummy;
-        let mut a = a;
-        let mut b = b;
-        while a.is_some() && b.is_some() {
-            if a.as_ref().unwrap().val < b.as_ref().unwrap().val {
-                let next = a.as_mut().unwrap().next.take();
-                curr.next = a;
-                a = next;
-            } else {
-                let next = b.as_mut().unwrap().next.take();
-                curr.next = b;
-                b = next;
-            }
-            curr = curr.next.as_mut().unwrap();
+        let mid = len / 2;
+        let mut head = head;
+        let mut current = &mut head;
+        for _ in 0..mid {
+            current = &mut current.as_mut().unwrap().next;
         }
-        if a.is_some() {
-            curr.next = a;
-        }
-        if b.is_some() {
-            curr.next = b;
-        }
-        dummy.next
+
+        let right = current.take();
+        let left = head;
+        let left_sorted = Self::sort_list(left);
+        let right_sorted = Self::sort_list(right);
+        merge(left_sorted, right_sorted)
     }
 }
 

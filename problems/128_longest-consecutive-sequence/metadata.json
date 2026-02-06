@@ -1,16 +1,14 @@
 {
-  "id": 148,
-  "slug": "sort-list",
+  "id": 128,
+  "slug": "longest-consecutive-sequence",
   "difficulty": "medium",
   "topics": [
-    "linked-list",
-    "two-pointers",
-    "divide-and-conquer",
-    "sorting",
-    "merge-sort"
+    "array",
+    "hash-table",
+    "union-find"
   ],
   "date_solved": "2026-02-05",
-  "url": "https://leetcode.com/problems/sort-list/",
+  "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
   "attempts": 1,
   "cpp": true,
   "rust": true,

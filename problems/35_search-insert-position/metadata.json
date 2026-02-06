@@ -1,0 +1,19 @@
+{
+  "id": 35,
+  "slug": "search-insert-position",
+  "difficulty": "easy",
+  "topics": [
+    "array",
+    "binary-search"
+  ],
+  "date_solved": "2026-02-05",
+  "url": "https://leetcode.com/problems/search-insert-position/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-06",
+    "7d": "2026-02-12",
+    "30d": "2026-03-07"
+  }
+}

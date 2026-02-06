@@ -1,16 +1,12 @@
 {
-  "id": 148,
-  "slug": "sort-list",
+  "id": 77,
+  "slug": "combinations",
   "difficulty": "medium",
   "topics": [
-    "linked-list",
-    "two-pointers",
-    "divide-and-conquer",
-    "sorting",
-    "merge-sort"
+    "backtracking"
   ],
   "date_solved": "2026-02-05",
-  "url": "https://leetcode.com/problems/sort-list/",
+  "url": "https://leetcode.com/problems/combinations/",
   "attempts": 1,
   "cpp": true,
   "rust": true,

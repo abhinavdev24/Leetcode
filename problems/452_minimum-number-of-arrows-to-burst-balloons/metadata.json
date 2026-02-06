@@ -1,16 +1,14 @@
 {
-  "id": 148,
-  "slug": "sort-list",
+  "id": 452,
+  "slug": "minimum-number-of-arrows-to-burst-balloons",
   "difficulty": "medium",
   "topics": [
-    "linked-list",
-    "two-pointers",
-    "divide-and-conquer",
-    "sorting",
-    "merge-sort"
+    "array",
+    "greedy",
+    "sorting"
   ],
   "date_solved": "2026-02-05",
-  "url": "https://leetcode.com/problems/sort-list/",
+  "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
   "attempts": 1,
   "cpp": true,
   "rust": true,

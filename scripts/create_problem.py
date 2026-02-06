@@ -72,7 +72,9 @@ def fetch_problem_data(slug: str) -> Dict[str, Any]:
 
     payload = {"query": GRAPHQL_QUERY, "variables": {"titleSlug": slug}}
     try:
-        resp = session.post(GRAPHQL_ENDPOINT, json=payload, timeout=REQUEST_TIMEOUT_SECONDS)
+        resp = session.post(
+            GRAPHQL_ENDPOINT, json=payload, timeout=REQUEST_TIMEOUT_SECONDS
+        )
         resp.raise_for_status()
     except RequestException as exc:
         raise RuntimeError(f"Network/API request failed: {exc}") from exc
@@ -103,8 +105,8 @@ def build_metadata(problem: Dict[str, Any], url: str) -> Dict[str, Any]:
         "date_solved": today.isoformat(),
         "url": url,
         "attempts": 1,
-        "cpp": False,
-        "rust": False,
+        "cpp": True,
+        "rust": True,
         "reviews": reviews,
     }
 
@@ -170,7 +172,9 @@ def append_problem_csv(metadata: Dict[str, Any]) -> None:
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="Create local scaffolding for a LeetCode problem.")
+    parser = argparse.ArgumentParser(
+        description="Create local scaffolding for a LeetCode problem."
+    )
     parser.add_argument("url", help="Full LeetCode problem URL")
     args = parser.parse_args(argv)
 

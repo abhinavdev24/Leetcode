@@ -15,3 +15,12 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 13,roman-to-integer,easy,hash-table;math;string,2026-02-03,https://leetcode.com/problems/roman-to-integer/,1,true,true,2026-02-04,2026-02-10,2026-03-05
 802,find-eventual-safe-states,medium,depth-first-search;breadth-first-search;graph;topological-sort,2026-02-03,https://leetcode.com/problems/find-eventual-safe-states/,1,true,true,2026-02-04,2026-02-10,2026-03-05
 851,loud-and-rich,medium,array;depth-first-search;graph;topological-sort,2026-02-03,https://leetcode.com/problems/loud-and-rich/,1,true,true,2026-02-04,2026-02-10,2026-03-05
+74,search-a-2d-matrix,medium,array;binary-search;matrix,2026-02-05,https://leetcode.com/problems/search-a-2d-matrix/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+35,search-insert-position,easy,array;binary-search,2026-02-05,https://leetcode.com/problems/search-insert-position/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+53,maximum-subarray,medium,array;divide-and-conquer;dynamic-programming,2026-02-05,https://leetcode.com/problems/maximum-subarray,1,true,true,2026-02-06,2026-02-12,2026-03-07
+452,minimum-number-of-arrows-to-burst-balloons,medium,array;greedy;sorting,2026-02-05,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+108,convert-sorted-array-to-binary-search-tree,easy,array;divide-and-conquer;tree;binary-search-tree;binary-tree,2026-02-05,https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+289,game-of-life,medium,array;matrix;simulation,2026-02-05,https://leetcode.com/problems/game-of-life/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+46,permutations,medium,array;backtracking,2026-02-05,https://leetcode.com/problems/permutations/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+77,combinations,medium,backtracking,2026-02-05,https://leetcode.com/problems/combinations/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+128,longest-consecutive-sequence,medium,array;hash-table;union-find,2026-02-05,https://leetcode.com/problems/longest-consecutive-sequence/,1,true,true,2026-02-06,2026-02-12,2026-03-07
