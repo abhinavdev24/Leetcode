@@ -24,3 +24,8 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 46,permutations,medium,array;backtracking,2026-02-05,https://leetcode.com/problems/permutations/,1,true,true,2026-02-06,2026-02-12,2026-03-07
 77,combinations,medium,backtracking,2026-02-05,https://leetcode.com/problems/combinations/,1,true,true,2026-02-06,2026-02-12,2026-03-07
 128,longest-consecutive-sequence,medium,array;hash-table;union-find,2026-02-05,https://leetcode.com/problems/longest-consecutive-sequence/,1,true,true,2026-02-06,2026-02-12,2026-03-07
+69,sqrtx,easy,math;binary-search,2026-02-06,https://leetcode.com/problems/sqrtx/,1,true,true,2026-02-07,2026-02-13,2026-03-08
+153,find-minimum-in-rotated-sorted-array,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array,1,true,true,2026-02-07,2026-02-13,2026-03-08
+34,find-first-and-last-position-of-element-in-sorted-array,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/,1,true,true,2026-02-07,2026-02-13,2026-03-08
+162,find-peak-element,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/find-peak-element/,1,true,true,2026-02-07,2026-02-13,2026-03-08
+33,search-in-rotated-sorted-array,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/search-in-rotated-sorted-array,1,true,true,2026-02-07,2026-02-13,2026-03-08
