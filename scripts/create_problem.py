@@ -171,6 +171,27 @@ def append_problem_csv(metadata: Dict[str, Any]) -> None:
         writer.writerow(row)
 
 
+def problem_exists_in_csv(metadata: Dict[str, Any]) -> bool:
+    csv_path = pathlib.Path("problems.csv")
+    if not csv_path.exists():
+        return False
+
+    target_id = str(metadata.get("id", "")).strip()
+    target_slug = str(metadata.get("slug", "")).strip()
+    if not target_id or not target_slug:
+        return False
+
+    with csv_path.open("r", newline="") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            row_id = str(row.get("id", "")).strip()
+            row_slug = str(row.get("slug", "")).strip()
+            if row_id == target_id and row_slug == target_slug:
+                return True
+
+    return False
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         description="Create local scaffolding for a LeetCode problem."
@@ -186,6 +207,13 @@ def main(argv: list[str]) -> int:
     problem = fetch_problem_data(slug)
     print("Building metadata...")
     metadata = build_metadata(problem, url)
+    print("Checking for existing problem entry...")
+    if problem_exists_in_csv(metadata):
+        print(
+            f"Problem already exists in problems.csv (id={metadata['id']}, slug={metadata['slug']})."
+        )
+        print("No files were created or modified.")
+        return 0
     print("Writing files...")
     write_files(problem, metadata)
     print("All done.")
