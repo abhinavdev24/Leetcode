@@ -1,0 +1,19 @@
+{
+  "id": 746,
+  "slug": "min-cost-climbing-stairs",
+  "difficulty": "easy",
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "date_solved": "2026-02-09",
+  "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-10",
+    "7d": "2026-02-16",
+    "30d": "2026-03-11"
+  }
+}

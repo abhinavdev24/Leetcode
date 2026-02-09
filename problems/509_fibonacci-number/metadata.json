@@ -1,0 +1,21 @@
+{
+  "id": 509,
+  "slug": "fibonacci-number",
+  "difficulty": "easy",
+  "topics": [
+    "math",
+    "dynamic-programming",
+    "recursion",
+    "memoization"
+  ],
+  "date_solved": "2026-02-07",
+  "url": "https://leetcode.com/problems/fibonacci-number/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-08",
+    "7d": "2026-02-14",
+    "30d": "2026-03-09"
+  }
+}

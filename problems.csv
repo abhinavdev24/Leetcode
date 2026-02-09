@@ -29,3 +29,9 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 34,find-first-and-last-position-of-element-in-sorted-array,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/,1,true,true,2026-02-07,2026-02-13,2026-03-08
 162,find-peak-element,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/find-peak-element/,1,true,true,2026-02-07,2026-02-13,2026-03-08
 33,search-in-rotated-sorted-array,medium,array;binary-search,2026-02-06,https://leetcode.com/problems/search-in-rotated-sorted-array,1,true,true,2026-02-07,2026-02-13,2026-03-08
+509,fibonacci-number,easy,math;dynamic-programming;recursion;memoization,2026-02-07,https://leetcode.com/problems/fibonacci-number/,1,true,true,2026-02-08,2026-02-14,2026-03-09
+70,climbing-stairs,easy,math;dynamic-programming;memoization,2026-02-07,https://leetcode.com/problems/climbing-stairs/,1,true,true,2026-02-08,2026-02-14,2026-03-09
+198,house-robber,medium,array;dynamic-programming,2026-02-09,https://leetcode.com/problems/house-robber/,1,true,true,2026-02-10,2026-02-16,2026-03-11
+746,min-cost-climbing-stairs,easy,array;dynamic-programming,2026-02-09,https://leetcode.com/problems/min-cost-climbing-stairs/,1,true,true,2026-02-10,2026-02-16,2026-03-11
+1137,n-th-tribonacci-number,easy,math;dynamic-programming;memoization,2026-02-09,https://leetcode.com/problems/n-th-tribonacci-number/,1,true,true,2026-02-10,2026-02-16,2026-03-11
+213,house-robber-ii,medium,array;dynamic-programming,2026-02-09,https://leetcode.com/problems/house-robber-ii/,1,true,true,2026-02-10,2026-02-16,2026-03-11
