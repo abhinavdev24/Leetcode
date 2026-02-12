@@ -35,3 +35,8 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 746,min-cost-climbing-stairs,easy,array;dynamic-programming,2026-02-09,https://leetcode.com/problems/min-cost-climbing-stairs/,1,true,true,2026-02-10,2026-02-16,2026-03-11
 1137,n-th-tribonacci-number,easy,math;dynamic-programming;memoization,2026-02-09,https://leetcode.com/problems/n-th-tribonacci-number/,1,true,true,2026-02-10,2026-02-16,2026-03-11
 213,house-robber-ii,medium,array;dynamic-programming,2026-02-09,https://leetcode.com/problems/house-robber-ii/,1,true,true,2026-02-10,2026-02-16,2026-03-11
+62,unique-paths,medium,math;dynamic-programming;combinatorics,2026-02-12,https://leetcode.com/problems/unique-paths/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+322,coin-change,medium,array;dynamic-programming;breadth-first-search,2026-02-12,https://leetcode.com/problems/coin-change/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+63,unique-paths-ii,medium,array;dynamic-programming;matrix,2026-02-12,https://leetcode.com/problems/unique-paths-ii/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+120,triangle,medium,array;dynamic-programming,2026-02-12,https://leetcode.com/problems/triangle/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+64,minimum-path-sum,medium,array;dynamic-programming;matrix,2026-02-12,https://leetcode.com/problems/minimum-path-sum/,1,true,true,2026-02-13,2026-02-19,2026-03-14

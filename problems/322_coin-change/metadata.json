@@ -1,0 +1,20 @@
+{
+  "id": 322,
+  "slug": "coin-change",
+  "difficulty": "medium",
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "breadth-first-search"
+  ],
+  "date_solved": "2026-02-12",
+  "url": "https://leetcode.com/problems/coin-change/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-13",
+    "7d": "2026-02-19",
+    "30d": "2026-03-14"
+  }
+}
