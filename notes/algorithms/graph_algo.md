@@ -1,5 +1,128 @@
 # Graph Algorithms Cheat Sheet
 
+## 0) Repeatable Framework for Any Graph Problem
+
+### A) 20-second classifier (before coding)
+
+1. **Is it a grid or explicit edges?**
+   - grid ⇒ implicit graph neighbors
+   - edges ⇒ adjacency list
+2. **Directed or undirected?**
+3. **Weights?**
+   - none ⇒ BFS/DFS
+   - 0/1 ⇒ 0-1 BFS
+   - positive ⇒ Dijkstra
+   - negative ⇒ Bellman–Ford (rare on LC)
+4. **What’s being asked?**
+   - existence? count? min/max? ordering? connectivity after ops?
+
+This narrows most problems to 1–2 patterns.
+
+### B) Translate problem → canonical graph model (write these 5 lines)
+
+- **Nodes =** what is a state? (cell / city / word / `(node, mask)` / `(node, k)`)
+- **Edges =** how do you move? what costs?
+- **Start(s) =** single vs multi-source
+- **Goal =** reach? shortest? count? best value? detect cycle?
+- **Constraints =** `V` up to? `E` up to? need `O(E log V)` vs `O(VE)`?
+
+If you can’t state “Nodes/Edges” clearly, you’re not ready to code.
+
+### C) Pick the solver family (deterministic mapping)
+
+**Shortest path / minimum steps / minimum cost**
+- unweighted ⇒ BFS
+- 0/1 weights ⇒ 0-1 BFS
+- positive weights ⇒ Dijkstra
+- “visiting all nodes” / stateful shortest path ⇒ BFS/Dijkstra on a **state graph**
+- all-pairs shortest (small `n`) ⇒ Floyd–Warshall (rare on LC)
+
+**Dependency / ordering / prerequisites**
+- need valid order ⇒ topological sort (Kahn/DFS)
+- detect cycle ⇒ directed 3-color DFS or topo-size check
+- “safe nodes” (don’t reach cycles) ⇒ reverse graph + outdegree trimming OR SCC compression
+
+**Connectivity / grouping / components**
+- static components ⇒ DFS/BFS
+- dynamic unions / edges added over time ⇒ DSU
+- minimum cost to connect ⇒ MST (Kruskal/Prim)
+
+**Critical edges / single point of failure**
+- bridges / articulation points ⇒ Tarjan low-link
+
+**Mutual reachability / cycles as groups**
+- SCC (Tarjan/Kosaraju) ⇒ compress to DAG ⇒ solve on DAG
+
+**Two groups / conflicts**
+- bipartite / 2-color ⇒ BFS/DFS coloring
+
+### D) Hard graph problems usually hide a “state graph”
+
+If it feels hard, the **node is not just a vertex**.
+
+Common state upgrades:
+- `(node, mask)` → visiting all nodes, TSP-like (e.g., LC 847)
+- `(node, remainingK)` → k stops, k walls, k discounts
+- `(node, time)` / `(node, parity)` → periodic constraints
+- `(node, lastColor)` → alternating constraints
+- `(i, j, dir)` in grids → direction-based transitions
+
+Rule: if the answer depends on “what you already used / have left”, add it to the state.
+
+### E) Write invariants before code (prevents bugs)
+
+- **Visited definition:** visited *what*? (`vis[u]` vs `vis[u][mask]`)
+- **Relaxation rule:** when do we update `dist`? (`if dist[v] > dist[u] + w`)
+- **Termination / early exit:** BFS first-reach, Dijkstra first-pop target (when non-negative)
+
+If visited is wrong, everything is wrong.
+
+### F) Most “hard” questions are 2 patterns glued together
+
+- topo + DP (e.g., longest path in DAG)
+- Dijkstra + state (shortest path with extra dimension)
+- SCC + topo (condense SCCs → DAG → solve)
+- DSU + sorting (Kruskal MST, offline queries)
+- BFS + reverse graph (eventual safe nodes)
+
+When stuck: “what is the second pattern?”
+
+### G) Debug checklist (graph-specific)
+
+1. Directed vs undirected edges added correctly?
+2. Indexing (0-based vs 1-based)?
+3. Visited/dist updated at the right time?
+   - BFS: mark visited when pushed
+   - Dijkstra: allow multiple relaxations; finalize on min-pop (stale-check)
+4. Missing state dimension? (most common in hard)
+5. Complexity: did `V` explode after state expansion?
+
+### H) Recall system under pressure
+
+Trigger phrase → pattern:
+- “minimum steps” → BFS
+- “minimum cost, positive” → Dijkstra
+- “weights are 0/1” → 0-1 BFS
+- “order / prerequisites” → topo
+- “can finish? cycle?” → directed cycle / topo-size check
+- “two groups / dislike” → bipartite
+- “merge groups / swap within groups” → DSU
+- “critical connection / removing one edge disconnects” → bridges
+- “mutual reachability / cycles collapsed” → SCC
+- “doesn’t lead to cycle / eventually ends” → reverse trim / SCC
+
+Practice method (fast): for every solved problem, write one line:
+`Trigger → Pattern → State definition`
+
+### I) Mini “hard graph” interview workflow
+
+1. Classifier (directed? weighted?)
+2. Define state graph (nodes/edges/start/goal)
+3. Choose template (BFS/Dijkstra/topo/DSU/Tarjan)
+4. Confirm visited/dist definition
+5. Implement template
+6. Test tiny custom cases (cycle, disconnected, multi-source)
+
 ## 1) BFS (Shortest path in unweighted graph)
 
 **Use for:** shortest steps, levels, min edges, bipartite check base, flood-fill on graph.
@@ -637,7 +760,7 @@ vector<int> bfs_parent(int n, vector<vector<int>>& g, int src) {
 
 ---
 
-# The “Google Graph Set” you should memorize (10/10 ROI)
+## Practice: “Google Graph Set” (high ROI)
 
 1. BFS + multi-source BFS
 2. DFS components
@@ -650,18 +773,13 @@ vector<int> bfs_parent(int n, vector<vector<int>>& g, int src) {
 9. Reverse-graph trimming (eventual safe nodes)
 10. Path reconstruction
 
-Got it 👍
-Below is the **same Google-focused graph list**, but now **every problem is a clickable LeetCode link** so you can open and solve directly.
+---
 
-I’ve kept it **clean, grouped by pattern**, zero fluff.
+## Graph Patterns → Clickable LeetCode List (Google SDE)
 
 ---
 
-# 🧠 Graph Patterns → Clickable LeetCode List (Google SDE)
-
----
-
-## 1️⃣ BFS / DFS Basics
+### 1️⃣ BFS / DFS Basics
 
 - [200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
@@ -671,7 +789,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 2️⃣ Multi-Source BFS
+### 2️⃣ Multi-Source BFS
 
 - [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
 - [542. 01 Matrix](https://leetcode.com/problems/01-matrix/)
@@ -680,14 +798,14 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 3️⃣ Cycle Detection (Directed & Undirected)
+### 3️⃣ Cycle Detection (Directed & Undirected)
 
-### Undirected
+#### Undirected
 
 - [261. Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
 - [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)
 
-### Directed
+#### Directed
 
 - [207. Course Schedule](https://leetcode.com/problems/course-schedule/)
 - [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
@@ -695,7 +813,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 4️⃣ Topological Sort / Dependencies
+### 4️⃣ Topological Sort / Dependencies
 
 - [207. Course Schedule](https://leetcode.com/problems/course-schedule/)
 - [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
@@ -704,7 +822,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 5️⃣ Bipartite Graph
+### 5️⃣ Bipartite Graph
 
 - [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/)
 - [886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/)
@@ -712,26 +830,26 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 6️⃣ Shortest Path (BFS / Dijkstra / 0-1 BFS)
+### 6️⃣ Shortest Path (BFS / Dijkstra / 0-1 BFS)
 
-### BFS
+#### BFS
 
 - [1091. Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
 - [127. Word Ladder](https://leetcode.com/problems/word-ladder/)
 
-### Dijkstra
+#### Dijkstra
 
 - [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/)
 - [1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/)
 - [1514. Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability/)
 
-### 0-1 BFS
+#### 0-1 BFS
 
 - [1368. Minimum Cost to Make at Least One Valid Path](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/)
 
 ---
 
-## 7️⃣ Union-Find (DSU)
+### 7️⃣ Union-Find (DSU)
 
 - [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)
 - [547. Number of Provinces](https://leetcode.com/problems/number-of-provinces/)
@@ -741,7 +859,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 8️⃣ Minimum Spanning Tree (Kruskal / Prim)
+### 8️⃣ Minimum Spanning Tree (Kruskal / Prim)
 
 - [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/)
 - [1135. Connecting Cities With Minimum Cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
@@ -749,7 +867,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 9️⃣ Strongly Connected Components / Graph Connectivity
+### 9️⃣ Strongly Connected Components / Graph Connectivity
 
 - [1192. Critical Connections in a Network](https://leetcode.com/problems/critical-connections-in-a-network/)
 - [1319. Number of Operations to Make Network Connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/)
@@ -757,14 +875,14 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 🔟 Bridges & Articulation Points
+### 🔟 Bridges & Articulation Points
 
 - [1192. Critical Connections in a Network](https://leetcode.com/problems/critical-connections-in-a-network/)
 - [1568. Minimum Number of Days to Disconnect Island](https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/)
 
 ---
 
-## 1️⃣1️⃣ Grid → Graph Modeling
+### 1️⃣1️⃣ Grid → Graph Modeling
 
 - [417. Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
 - [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)
@@ -773,7 +891,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-## 1️⃣2️⃣ Hard / High-Signal Graph Problems
+### 1️⃣2️⃣ Hard / High-Signal Graph Problems
 
 - [269. Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
 - [1368. Minimum Cost to Make at Least One Valid Path](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/)
@@ -783,7 +901,7 @@ I’ve kept it **clean, grouped by pattern**, zero fluff.
 
 ---
 
-# 🏆 Google “Do These First” (Direct Links)
+## 🏆 Google “Do These First” (Direct Links)
 
 1. [200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
 2. [207 Course Schedule](https://leetcode.com/problems/course-schedule/)

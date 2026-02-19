@@ -1,0 +1,20 @@
+{
+  "id": 122,
+  "slug": "best-time-to-buy-and-sell-stock-ii",
+  "difficulty": "medium",
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "greedy"
+  ],
+  "date_solved": "2026-02-12",
+  "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-13",
+    "7d": "2026-02-19",
+    "30d": "2026-03-14"
+  }
+}

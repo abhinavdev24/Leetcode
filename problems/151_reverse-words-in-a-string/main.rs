@@ -2,9 +2,38 @@ struct Solution;
 
 impl Solution {
     pub fn reverse_words(s: String) -> String {
-        // TODO: implement
-        let _ = s;
-        String::new()
+        let bytes = s.as_bytes();
+        let mut i: isize = bytes.len() as isize - 1;
+        let mut result = String::new();
+
+        while i >= 0 {
+            // skip trailing spaces
+            while i >= 0 && bytes[i as usize] == b' ' {
+                i -= 1;
+            }
+
+            if i < 0 {
+                break;
+            }
+
+            let mut j = i;
+            // find start of the word
+            while j >= 0 && bytes[j as usize] != b' ' {
+                j -= 1;
+            }
+
+            // append word
+            if !result.is_empty() {
+                result.push(' ');
+            }
+            let start = (j + 1) as usize;
+            let end = (i + 1) as usize; // exclusive
+            result.push_str(&s[start..end]);
+
+            i = j - 1;
+        }
+
+        result
     }
 }
 

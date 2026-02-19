@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "slug": "decode-ways",
+  "difficulty": "medium",
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "date_solved": "2026-02-18",
+  "url": "https://leetcode.com/problems/decode-ways/",
+  "attempts": 1,
+  "cpp": true,
+  "rust": true,
+  "reviews": {
+    "1d": "2026-02-19",
+    "7d": "2026-02-25",
+    "30d": "2026-03-20"
+  }
+}

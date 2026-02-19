@@ -8,7 +8,6 @@ class Solution
 public:
     string reverseWords(string s)
     {
-        // TODO: implement
         int i = s.size() - 1;
         string result;
 

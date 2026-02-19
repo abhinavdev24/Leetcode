@@ -40,3 +40,13 @@ id,slug,difficulty,topics,date_solved,url,attempts,cpp,rust,reviews_1d,reviews_7
 63,unique-paths-ii,medium,array;dynamic-programming;matrix,2026-02-12,https://leetcode.com/problems/unique-paths-ii/,1,true,true,2026-02-13,2026-02-19,2026-03-14
 120,triangle,medium,array;dynamic-programming,2026-02-12,https://leetcode.com/problems/triangle/,1,true,true,2026-02-13,2026-02-19,2026-03-14
 64,minimum-path-sum,medium,array;dynamic-programming;matrix,2026-02-12,https://leetcode.com/problems/minimum-path-sum/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+122,best-time-to-buy-and-sell-stock-ii,medium,array;dynamic-programming;greedy,2026-02-12,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+55,jump-game,medium,array;dynamic-programming;greedy,2026-02-12,https://leetcode.com/problems/jump-game/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+45,jump-game-ii,medium,array;dynamic-programming;greedy,2026-02-12,https://leetcode.com/problems/jump-game-ii/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+136,single-number,easy,array;bit-manipulation,2026-02-12,https://leetcode.com/problems/single-number/,1,true,true,2026-02-13,2026-02-19,2026-03-14
+518,coin-change-ii,medium,array;dynamic-programming,2026-02-18,https://leetcode.com/problems/coin-change-ii/,1,true,true,2026-02-19,2026-02-25,2026-03-20
+91,decode-ways,medium,string;dynamic-programming,2026-02-18,https://leetcode.com/problems/decode-ways/,1,true,true,2026-02-19,2026-02-25,2026-03-20
+377,combination-sum-iv,medium,array;dynamic-programming,2026-02-18,https://leetcode.com/problems/combination-sum-iv/,1,true,true,2026-02-19,2026-02-25,2026-03-20
+123,best-time-to-buy-and-sell-stock-iii,hard,array;dynamic-programming,2026-02-19,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/,1,true,true,2026-02-20,2026-02-26,2026-03-21
+188,best-time-to-buy-and-sell-stock-iv,hard,array;dynamic-programming,2026-02-19,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/,1,true,true,2026-02-20,2026-02-26,2026-03-21
+279,perfect-squares,medium,math;dynamic-programming;breadth-first-search,2026-02-19,https://leetcode.com/problems/perfect-squares/,1,true,true,2026-02-20,2026-02-26,2026-03-21
